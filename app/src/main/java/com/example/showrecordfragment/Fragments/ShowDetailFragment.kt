@@ -1,6 +1,5 @@
 package com.example.showrecordfragment.Fragments
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -16,7 +15,6 @@ class ShowDetailFragment : Fragment() {
     private lateinit var showDetail : TextView
     private lateinit var newRecordBtn : Button
 
-    @SuppressLint("SetTextI18n")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
@@ -30,7 +28,9 @@ class ShowDetailFragment : Fragment() {
 
         showDetail = view.findViewById(R.id.showDetail2)
 
-        showDetail.text = "\n$name\n$age\n$city"
+        val message = "\n$name\n$age\n$city"
+
+        showDetail.text = message
 
         newRecordBtn = view.findViewById(R.id.newRecordBtn)
 
