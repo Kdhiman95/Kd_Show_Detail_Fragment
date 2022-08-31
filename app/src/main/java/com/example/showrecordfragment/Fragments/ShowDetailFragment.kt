@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.FragmentManager
+import com.example.showrecordfragment.MainActivity
 import com.example.showrecordfragment.R
 
 class ShowDetailFragment : Fragment() {
@@ -37,9 +38,9 @@ class ShowDetailFragment : Fragment() {
         newRecordBtn.setOnClickListener{
             val frag = parentFragmentManager
             val ft = frag.beginTransaction()
-            ft.add(R.id.fragment_container,GetNameFragment())
+            ft.replace(R.id.fragment_container,GetNameFragment())
             frag.popBackStack("ROOT",FragmentManager.POP_BACK_STACK_INCLUSIVE)
-            ft.addToBackStack("ROOT").commit()
+            ft.commit()
         }
 
         return view

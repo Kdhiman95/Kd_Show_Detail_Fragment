@@ -16,7 +16,6 @@ class MainActivity : AppCompatActivity() {
 
         frag = supportFragmentManager
 
-        frag.beginTransaction().add(R.id.fragment_container,GetNameFragment()).addToBackStack("ROOT").commit()
-
+        frag.beginTransaction().add(R.id.fragment_container,GetNameFragment()).commit()
     }
 }

@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import androidx.fragment.app.FragmentManager
 import com.example.showrecordfragment.R
 
 class GetNameFragment : Fragment() {
@@ -33,7 +34,7 @@ class GetNameFragment : Fragment() {
                 bundle.putString("Name",inputName.text.toString())
                 val getAge = GetAgeFragment()
                 getAge.arguments = bundle
-                parentFragmentManager.beginTransaction().replace(R.id.fragment_container,getAge).addToBackStack(null).commit()
+                parentFragmentManager.beginTransaction().replace(R.id.fragment_container,getAge).addToBackStack("ROOT").commit()
             }
         }
         return view
